@@ -1,9 +1,9 @@
 <template>
   <div class="rhyme-adjective">
      <p>
-      <router-link v-bind: to="{ name: 'RhymeAdjective' }">Rhyme Adjective</router-link>
+      <router-link v-bind:to="{ name: 'RhymeAdjective' }">Rhyme Adjective</router-link>
       &bull;
-          <router-link v-bind: to="{ name: 'Rhymesaurus' }">Rhymesaurus</router-link>
+          <router-link v-bind:to="{ name: 'Rhymesaurus' }">Rhymesaurus</router-link>
   </p>
     <form v-on:submit.prevent="findWords">
       <p>Find rhymes for <input type="text" v-model="rhyme"> that are adjectives use with <input type="text" v-model="phrase"> <button type="submit">Search</button></p>
