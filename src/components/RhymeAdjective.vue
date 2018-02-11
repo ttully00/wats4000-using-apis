@@ -1,15 +1,16 @@
 <template>
-  <div class="rhymesaurus">
-    <p>
+  <div class="rhyme-adjective">
+     <p>
       <router-link v-bind: to="{ name: 'RhymeAdjective' }">Rhyme Adjective</router-link>
       &bull;
           <router-link v-bind: to="{ name: 'Rhymesaurus' }">Rhymesaurus</router-link>
   </p>
     <form v-on:submit.prevent="findWords">
-      <p>Find rhymes for <input type="text" v-model="rhyme"> related to <input type="text" v-model="phrase"> <button type="submit">Search</button></p>
+      <p>Find rhymes for <input type="text" v-model="rhyme"> that are adjectives use with <input type="text" v-model="phrase"> <button type="submit">Search</button></p>
     </form>
     <ul v-if="results && results.length > 0" class="results">
-      <li v-for="item of results">
+<li v-for="item of results">
+
         <p><strong>{{item.word}}</strong></p>
         <p>{{item.score}}</p>
       </li>
@@ -20,7 +21,7 @@
     </div>
 
     <ul v-if="errors && errors.length > 0" class="errors">
-      <li v-for="error of errors">
+      <li v-for="error in errors">
         {{error.message}}
       </li>
     </ul>
@@ -31,7 +32,7 @@
 import axios from 'axios';
 
 export default {
-  name: 'Rhymesaurus',
+  name: 'RhymeAdjective',
   data () {
     return {
       results: null,
@@ -59,7 +60,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .rhymesaurus {
   font-size: 1.4rem;
